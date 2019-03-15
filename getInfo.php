@@ -2,7 +2,7 @@
 
 require_once('./apiKey.php');
 
-$apiServer = 'https://backend.sigfox.com/api/devices/' . DEVICE_ID . '/messages';
+$apiServer = 'https://api.sigfox.com/v2/devices/' . DEVICE_ID . '/messages';
 $curl = curl_init();
 $login = API_LOGIN;
 $pass = API_PASSWORD;
@@ -27,7 +27,7 @@ echo "<h2>直近3件のデータ</h2>";
 //直近3件の値を出力
 echo "------------直近1件目-----------" . "<br>";
 if(!empty($data['data'][0]['time'])){
-	echo "UNIX時間:";
+	echo "UNIX時間(ms単位):";
 	echo $data['data'][0]['time'] . "<br>";
 	echo "センサ値:";
 	echo $data['data'][0]['data'];
@@ -39,7 +39,7 @@ echo "<br><br>";
 
 echo "------------直近2件目-----------" . "<br>";
 if(!empty($data['data'][1]['time'])){
-	echo "UNIX時間:";
+	echo "UNIX時間(ms単位):";
 	echo $data['data'][1]['time'] . "<br>";
 	echo "センサ値:";
 	echo $data['data'][1]['data'];
@@ -51,7 +51,7 @@ echo "<br><br>";
 
 echo "------------直近3件目-----------" . "<br>";
 if(!empty($data['data'][2]['time'])){
-	echo "UNIX時間:";
+	echo "UNIX時間(ms単位):";
 	echo $data['data'][2]['time'] . "<br>";
 	echo "センサ値:";
 	echo $data['data'][2]['data'];
@@ -64,5 +64,6 @@ echo "<br><br>";
 echo "<h2>APIから返ってきたJSONの中身</h2>";
 
 //JSONの中身を出力
-echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+var_dump($data);
+//echo json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 ?>
