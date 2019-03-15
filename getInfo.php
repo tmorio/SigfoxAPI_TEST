@@ -2,7 +2,7 @@
 
 require_once('./apiKey.php');
 
-$apiServer = 'https://backend.sigfox.com/api/devices/' . DEVICE_ID . '/messages';
+$apiServer = 'https://api.sigfox.com/v2/devices/' . DEVICE_ID . '/messages';
 $curl = curl_init();
 $login = API_LOGIN;
 $pass = API_PASSWORD;
