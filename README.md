@@ -18,7 +18,7 @@ deny from all
 #### nginxの例
 
 ```
-location = ~*/apiKey.php {
+location = (ここにファイルまでのパス)/apiKey.php {
 	deny all;
 }
 ```
