@@ -29,7 +29,7 @@ echo "------------直近1件目-----------" . "<br>";
 if(!empty($data['data'][0]['time'])){
 	echo "UNIX時間(ms単位):";
 	echo $data['data'][0]['time'] . "<br>";
-	echo "センサ値:";
+	echo "メッセージの値:";
 	echo $data['data'][0]['data'];
 }else{
 	echo "データがありません。apiKey.phpの記入ミスやSigfox CloudのAPIの設定、または、MESSAGESが正しく送信されているかご確認下さい。";
@@ -41,7 +41,7 @@ echo "------------直近2件目-----------" . "<br>";
 if(!empty($data['data'][1]['time'])){
 	echo "UNIX時間(ms単位):";
 	echo $data['data'][1]['time'] . "<br>";
-	echo "センサ値:";
+	echo "メッセージの値:";
 	echo $data['data'][1]['data'];
 }else{
 	echo "データがありません。1件目が正しく表示されている場合は、データ数が少ない事が理由です。";
@@ -53,7 +53,7 @@ echo "------------直近3件目-----------" . "<br>";
 if(!empty($data['data'][2]['time'])){
 	echo "UNIX時間(ms単位):";
 	echo $data['data'][2]['time'] . "<br>";
-	echo "センサ値:";
+	echo "メッセージの値:";
 	echo $data['data'][2]['data'];
 }else{
 	echo "データがありません。1件目が正しく表示されている場合は、データ数が少ない事が理由です。";
